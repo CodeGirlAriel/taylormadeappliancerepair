@@ -1,105 +1,36 @@
-import { useState } from "react";
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 
-interface ContactFormData {
-  firstName: string;
-  lastName: string;
-  phone: string;
-  email: string;
-  appliance: string;
-  problem: string;
-}
+// Put your Rossware links here (you can switch to env vars later if you want)
+const SCHEDULE_URL = "https://booking.rossware.com/schedule/4474";
+const TRACK_URL    = "https://booking.rossware.com/track-technician/4474";
+const PARTS_URL    = "https://booking.rossware.com/check-status/4474";
 
 export default function ContactSection() {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState<ContactFormData>({
-    firstName: "",
-    lastName: "",
-    phone: "",
-    email: "",
-    appliance: "",
-    problem: ""
-  });
-
-  const submitContactForm = useMutation({
-    mutationFn: async (data: ContactFormData) => {
-      return await apiRequest("POST", "/api/contact", data);
-    },
-    onSuccess: () => {
-      toast({
-        title: "Service Request Submitted",
-        description: "Thank you for your service request! We will contact you soon.",
-      });
-      // Reset form
-      setFormData({
-        firstName: "",
-        lastName: "",
-        phone: "",
-        email: "",
-        appliance: "",
-        problem: ""
-      });
-    },
-    onError: (error: any) => {
-      toast({
-        title: "Error",
-        description: error.message || "An error occurred while submitting your request. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const handleInputChange = (field: keyof ContactFormData, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.firstName || !formData.lastName || !formData.phone || !formData.email || !formData.appliance || !formData.problem) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    submitContactForm.mutate(formData);
-  };
-
   const contactInfo = [
     {
       icon: Phone,
       title: "Phone",
       content: "757-777-7034",
-      href: "tel:757-777-7034"
+      href: "tel:757-777-7034",
     },
     {
       icon: Mail,
-      title: "Email", 
+      title: "Email",
       content: "taylormadeappliancellc@gmail.com",
-      href: "mailto:taylormadeappliancellc@gmail.com"
+      href: "mailto:taylormadeappliancellc@gmail.com",
     },
     {
       icon: Clock,
       title: "Business Hours",
-      content: "Monday - Friday\n9:00 AM - 4:00 PM"
+      content: "Monday - Friday\n9:00 AM - 4:00 PM",
     },
     {
       icon: MapPin,
       title: "Service Area",
-      content: "Virginia Beach, Norfolk, Chesapeake, Hampton, Newport News, Suffolk, Portsmouth, Smithfield, Carrollton and surrounding areas"
-    }
+      content:
+        "Virginia Beach, Norfolk, Chesapeake, Hampton, Newport News, Suffolk, Portsmouth, Smithfield, Carrollton and surrounding areas",
+    },
   ];
 
   return (
@@ -110,31 +41,31 @@ export default function ContactSection() {
             Get Your Appliances Fixed Today
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-testid="contact-description">
-            Contact us to schedule your repair service. We're here to help get your appliances working like new again.
+            Book online, track your technician, or check job/parts status with our secure customer portal.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
+          {/* Left: contact info */}
           <div className="space-y-8">
             <div className="bg-white rounded-xl p-8 shadow-sm">
               <h3 className="text-xl font-semibold text-gray-900 mb-6" data-testid="contact-info-title">
                 Contact Information
               </h3>
-              
+
               <div className="space-y-6">
                 {contactInfo.map((info, index) => {
-                  const IconComponent = info.icon;
+                  const Icon = info.icon;
                   return (
                     <div key={index} className="flex items-start" data-testid={`contact-info-${index}`}>
                       <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                        <IconComponent className="text-white w-6 h-6" />
+                        <Icon className="text-white w-6 h-6" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900">{info.title}</h4>
                         {info.href ? (
-                          <a 
-                            href={info.href} 
+                          <a
+                            href={info.href}
                             className="text-primary hover:text-blue-700 font-medium break-all"
                             data-testid={`contact-link-${index}`}
                           >
@@ -150,117 +81,40 @@ export default function ContactSection() {
               </div>
             </div>
           </div>
-          
-          {/* Contact Form */}
+
+          {/* Right: Rossware actions (replaces the form) */}
           <div className="bg-white rounded-xl p-8 shadow-sm">
-            <h3 className="text-xl font-semibold text-gray-900 mb-6" data-testid="contact-form-title">
-              Request Service
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              Online Service Tools
             </h3>
-            <form className="space-y-6" onSubmit={handleSubmit} data-testid="contact-form">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <Label htmlFor="firstName" className="text-sm font-medium text-gray-700 mb-2">
-                    First Name
-                  </Label>
-                  <Input
-                    type="text"
-                    id="firstName"
-                    value={formData.firstName}
-                    onChange={(e) => handleInputChange('firstName', e.target.value)}
-                    className="w-full"
-                    required
-                    data-testid="input-firstname"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="lastName" className="text-sm font-medium text-gray-700 mb-2">
-                    Last Name
-                  </Label>
-                  <Input
-                    type="text"
-                    id="lastName"
-                    value={formData.lastName}
-                    onChange={(e) => handleInputChange('lastName', e.target.value)}
-                    className="w-full"
-                    required
-                    data-testid="input-lastname"
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <Label htmlFor="phone" className="text-sm font-medium text-gray-700 mb-2">
-                  Phone Number
-                </Label>
-                <Input
-                  type="tel"
-                  id="phone"
-                  value={formData.phone}
-                  onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className="w-full"
-                  required
-                  data-testid="input-phone"
-                />
-              </div>
-              
-              <div>
-                <Label htmlFor="email" className="text-sm font-medium text-gray-700 mb-2">
-                  Email Address
-                </Label>
-                <Input
-                  type="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="w-full"
-                  required
-                  data-testid="input-email"
-                />
-              </div>
-              
-              <div>
-                <Label htmlFor="appliance" className="text-sm font-medium text-gray-700 mb-2">
-                  Appliance Type
-                </Label>
-                <Select value={formData.appliance} onValueChange={(value) => handleInputChange('appliance', value)}>
-                  <SelectTrigger className="w-full" data-testid="select-appliance">
-                    <SelectValue placeholder="Select appliance type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="refrigerator">Refrigerator</SelectItem>
-                    <SelectItem value="microwave">Microwave</SelectItem>
-                    <SelectItem value="oven">Oven</SelectItem>
-                    <SelectItem value="stove">Stove</SelectItem>
-                    <SelectItem value="range">Range</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              
-              <div>
-                <Label htmlFor="problem" className="text-sm font-medium text-gray-700 mb-2">
-                  Describe the Problem
-                </Label>
-                <Textarea
-                  id="problem"
-                  rows={4}
-                  value={formData.problem}
-                  onChange={(e) => handleInputChange('problem', e.target.value)}
-                  placeholder="Please describe what's wrong with your appliance..."
-                  className="w-full"
-                  required
-                  data-testid="textarea-problem"
-                />
-              </div>
-              
-              <Button 
-                type="submit" 
-                className="w-full bg-primary text-white hover:bg-blue-700"
-                disabled={submitContactForm.isPending}
-                data-testid="button-submit-form"
-              >
-                {submitContactForm.isPending ? "Submitting..." : "Submit Service Request"}
+            <p className="text-gray-600 mb-6">
+              Use the links below to schedule an appointment, track your technician in real time,
+              or check the status of your job/parts. Each link opens in a new tab.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              <Button asChild className="w-full" data-testid="btn-schedule">
+                <a href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
+                  Schedule Appointment
+                </a>
               </Button>
-            </form>
+
+              <Button asChild variant="outline" className="w-full" data-testid="btn-track">
+                <a href={TRACK_URL} target="_blank" rel="noopener noreferrer">
+                  Track Technician
+                </a>
+              </Button>
+
+              <Button asChild variant="outline" className="w-full sm:col-span-2" data-testid="btn-parts">
+                <a href={PARTS_URL} target="_blank" rel="noopener noreferrer">
+                  Check Job / Parts Status
+                </a>
+              </Button>
+            </div>
+
+            <p className="text-xs text-gray-500 mt-4">
+              Powered by Rossware. Links open on booking.rossware.com.
+            </p>
           </div>
         </div>
       </div>
