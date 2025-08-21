@@ -98,7 +98,7 @@ export default function ContactSection() {
     {
       icon: MapPin,
       title: "Service Area",
-      content: "Virginia Beach, Norfolk, Chesapeake, and surrounding areas"
+      content: "Virginia Beach, Norfolk, Chesapeake, Hampton, Newport News, Suffolk, Portsmouth, Smithfield, Carrollton and surrounding areas"
     }
   ];
 
@@ -110,7 +110,7 @@ export default function ContactSection() {
             Get Your Appliances Fixed Today
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-testid="contact-description">
-            Contact us for a free estimate or to schedule your repair service. We're here to help get your appliances working like new again.
+            Contact us to schedule your repair service. We're here to help get your appliances working like new again.
           </p>
         </div>
         

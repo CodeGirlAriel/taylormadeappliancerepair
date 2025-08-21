@@ -1,0 +1,570 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Made Appliance Repair - Professional Appliance Repair Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#1E3A8A',
+                        'secondary': '#3B82F6',
+                        'accent': '#F59E0B',
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="font-inter bg-slate-50">
+    <!-- @COMPONENT: Header [navigation and contact info] -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-primary">Taylor Made Appliance Repair</h1>
+                        <p class="text-sm text-gray-600 italic">We Repair What Your Husband Fixed!</p>
+                    </div>
+                </div>
+                
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#home" class="text-gray-700 hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-gray-700 hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#testimonials" class="text-gray-700 hover:text-primary transition-colors">Reviews</a></li>
+                        <li><a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <div class="hidden lg:block text-right">
+                        <p class="text-sm text-gray-600">Call Today</p>
+                        <p class="text-lg font-semibold text-primary">(555) 123-4567</p>
+                    </div>
+                    <button class="bg-accent text-white px-6 py-2 rounded-lg font-medium hover:bg-yellow-600 transition-colors">
+                        Schedule Service
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: Hero [main banner with tagline and CTA] -->
+    <section id="home" class="relative bg-gradient-to-r from-primary to-secondary py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h2 class="text-5xl font-bold mb-6">Professional Appliance Repair Services</h2>
+                    <p class="text-xl mb-4 text-blue-100">We Repair What Your Husband Fixed!</p>
+                    <p class="text-lg mb-8 text-blue-100">Expert repair services for all major appliance brands. Fast, reliable, and affordable solutions for your home.</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <button class="bg-accent text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-yellow-600 transition-colors">
+                            <i class="fas fa-phone mr-2"></i>Call Now
+                        </button>
+                        <button class="bg-white text-primary px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-calendar mr-2"></i>Schedule Service
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div class="text-3xl font-bold">15+</div>
+                            <div class="text-blue-200">Years Experience</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold">1000+</div>
+                            <div class="text-blue-200">Happy Customers</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold">24/7</div>
+                            <div class="text-blue-200">Emergency Service</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <!-- Professional technician working on appliances -->
+                    <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Professional appliance repair technician at work" class="rounded-xl shadow-2xl w-full h-auto" />
+                    
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt text-accent text-2xl mr-3"></i>
+                            <div>
+                                <p class="font-semibold text-gray-800">Licensed & Insured</p>
+                                <p class="text-sm text-gray-600">Fully bonded technicians</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero -->
+
+    <!-- @COMPONENT: Services [appliance repair services grid] -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Repair Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We service all major appliance brands with expert technicians and genuine parts</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: services.map(service => ( -->
+                <div class="bg-slate-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Refrigerator Repair</h3>
+                    <p class="text-gray-600 mb-4">Cooling issues, ice maker problems, temperature control, and more</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Temperature regulation</li>
+                        <li>• Ice maker repair</li>
+                        <li>• Compressor issues</li>
+                        <li>• Door seal replacement</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Washer & Dryer</h3>
+                    <p class="text-gray-600 mb-4">Washing machine and dryer repair for all brands and models</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Won't start or spin</li>
+                        <li>• Water leakage</li>
+                        <li>• Heating problems</li>
+                        <li>• Noise issues</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Dishwasher Repair</h3>
+                    <p class="text-gray-600 mb-4">Complete dishwasher repair and maintenance services</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Not cleaning properly</li>
+                        <li>• Water drainage issues</li>
+                        <li>• Door problems</li>
+                        <li>• Control panel repair</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Microwave Repair</h3>
+                    <p class="text-gray-600 mb-4">Microwave oven repair and replacement services</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Not heating</li>
+                        <li>• Turntable issues</li>
+                        <li>• Door problems</li>
+                        <li>• Control panel repair</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-fire-burner"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Stove & Oven</h3>
+                    <p class="text-gray-600 mb-4">Range, stove, and oven repair for gas and electric models</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Temperature issues</li>
+                        <li>• Burner problems</li>
+                        <li>• Self-cleaning issues</li>
+                        <li>• Gas line repair</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Garbage Disposal</h3>
+                    <p class="text-gray-600 mb-4">Garbage disposal repair, replacement, and maintenance</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Won't turn on</li>
+                        <li>• Jamming issues</li>
+                        <li>• Leaking problems</li>
+                        <li>• Strange noises</li>
+                    </ul>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="bg-primary text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-blue-800 transition-colors">
+                    View All Services
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Services -->
+
+    <!-- @COMPONENT: About [company information and credentials] -->
+    <section id="about" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">About Taylor Made Appliance Repair</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        With over 15 years of experience in appliance repair, we've built our reputation on quality service, 
+                        honest pricing, and customer satisfaction. Our certified technicians are trained to work on all major 
+                        appliance brands and models.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        We understand that appliance breakdowns can be frustrating and disruptive to your daily routine. 
+                        That's why we offer fast, reliable service with same-day appointments available.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-certificate text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Licensed & Certified</h3>
+                                <p class="text-gray-600">Fully licensed and insured technicians</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Same-Day Service</h3>
+                                <p class="text-gray-600">Emergency and scheduled appointments</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-dollar-sign text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Transparent Pricing</h3>
+                                <p class="text-gray-600">No hidden fees or surprise charges</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-wrench text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Quality Parts</h3>
+                                <p class="text-gray-600">Genuine OEM parts with warranty</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Professional technician with tools -->
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" alt="Professional technician with repair tools and equipment" class="rounded-xl shadow-lg w-full h-auto" />
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Home appliances showroom -->
+                        <img src="https://pixabay.com/get/g77c1029a7a49bcc3ab3ef50b55ed202f13f417df4ae4441de6409b6599e7e0850ac3495fe732614aaa0b5e098783d9dd6ee3f3ca8c1876ab9191fcb63cde92b0_1280.jpg" alt="Modern home appliances in showroom setting" class="rounded-lg shadow-md w-full h-auto" />
+                        
+                        <!-- Appliance repair service van -->
+                        <img src="https://pixabay.com/get/g45f53f55802a21b9db3d834770d1a4897ee47af8e75a11a08c72186bc0c1bee0c0a393fada86a8fcc363415573aa7026f08878b379ff82a7294571ca59501f02_1280.jpg" alt="Professional appliance repair service vehicle" class="rounded-lg shadow-md w-full h-auto" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About -->
+
+    <!-- @COMPONENT: Testimonials [customer reviews] -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">What Our Customers Say</h2>
+                <p class="text-xl text-gray-600">Read reviews from satisfied customers across the area</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- @MAP: testimonials.map(testimonial => ( -->
+                <div class="bg-slate-50 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "My dishwasher wasn't draining properly and the previous 'fix' just made it worse. 
+                        Taylor Made came out the same day and had it working perfectly within an hour. Great service!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-semibold">
+                            SJ
+                        </div>
+                        <div class="ml-4">
+                            <p class="font-semibold text-gray-800" data-bind="testimonial.name">Sarah Johnson</p>
+                            <p class="text-sm text-gray-600" data-bind="testimonial.location">Downtown Area</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Professional, punctual, and reasonably priced. Fixed our refrigerator ice maker that three other 
+                        companies couldn't figure out. Highly recommended!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-semibold">
+                            MT
+                        </div>
+                        <div class="ml-4">
+                            <p class="font-semibold text-gray-800" data-bind="testimonial.name">Mike Thompson</p>
+                            <p class="text-sm text-gray-600" data-bind="testimonial.location">Westside</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Our dryer stopped heating and with a family of five, we needed it fixed fast. They came out the 
+                        same day and had it working like new. Excellent service!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-semibold">
+                            LW
+                        </div>
+                        <div class="ml-4">
+                            <p class="font-semibold text-gray-800" data-bind="testimonial.name">Lisa Williams</p>
+                            <p class="text-sm text-gray-600" data-bind="testimonial.location">Northside</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="bg-secondary text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-blue-600 transition-colors">
+                    Read More Reviews
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Testimonials -->
+
+    <!-- @COMPONENT: Contact [contact form and business information] -->
+    <section id="contact" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Get Your Appliance Fixed Today</h2>
+                <p class="text-xl text-gray-600">Contact us for fast, professional appliance repair service</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Schedule Your Repair</h3>
+                        <form class="space-y-6">
+                            <!-- @STATE: formData:object = {} -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="John" data-bind="formData.firstName">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Doe" data-bind="formData.lastName">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="(555) 123-4567" data-bind="formData.phone">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="john@example.com" data-bind="formData.email">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Appliance Type</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" data-bind="formData.applianceType">
+                                    <option value="">Select appliance</option>
+                                    <option value="refrigerator">Refrigerator</option>
+                                    <option value="washer">Washer</option>
+                                    <option value="dryer">Dryer</option>
+                                    <option value="dishwasher">Dishwasher</option>
+                                    <option value="stove">Stove/Oven</option>
+                                    <option value="microwave">Microwave</option>
+                                    <option value="disposal">Garbage Disposal</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Describe the Problem</label>
+                                <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Please describe what's wrong with your appliance..." data-bind="formData.description"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-accent text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-yellow-600 transition-colors" data-event="click:handleSubmit" data-implementation="Should validate form and submit service request">
+                                Schedule Repair Service
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-phone text-accent text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">(555) 123-4567</p>
+                                    <p class="text-sm text-gray-500">Available 24/7 for emergencies</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-accent text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">info@taylormaderepair.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-accent text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Service Area</h4>
+                                    <p class="text-gray-600">Downtown, Westside, Northside</p>
+                                    <p class="text-gray-600">and surrounding areas</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-accent text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Business Hours</h4>
+                                    <p class="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                                    <p class="text-gray-600">Saturday: 9:00 AM - 4:00 PM</p>
+                                    <p class="text-gray-600">Sunday: Emergency calls only</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-primary text-white rounded-xl p-8">
+                        <h3 class="text-2xl font-semibold mb-4">Emergency Service Available</h3>
+                        <p class="text-blue-100 mb-6">Need immediate repair? We offer 24/7 emergency service for urgent appliance issues.</p>
+                        <button class="bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
+                            Call Emergency Line
+                        </button>
+                    </div>
+
+                    <!-- Professional appliance repair workspace -->
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Professional appliance repair workspace with tools and parts" class="rounded-xl shadow-lg w-full h-auto" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact -->
+
+    <!-- @COMPONENT: Footer [business information and links] -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">Taylor Made Appliance Repair</h3>
+                    <p class="text-gray-300 mb-4 italic">We Repair What Your Husband Fixed!</p>
+                    <p class="text-gray-300 mb-6">Professional appliance repair services with over 15 years of experience. Licensed, insured, and committed to customer satisfaction.</p>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-google text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-yelp text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Refrigerator Repair</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Washer & Dryer</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Dishwasher Repair</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Stove & Oven</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Microwave Repair</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p><i class="fas fa-phone mr-2"></i>(555) 123-4567</p>
+                        <p><i class="fas fa-envelope mr-2"></i>info@taylormaderepair.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Serving Greater Metro Area</p>
+                        <p><i class="fas fa-clock mr-2"></i>24/7 Emergency Service</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 Taylor Made Appliance Repair. All rights reserved. Licensed & Insured.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- @FUNCTIONALITY: Smooth scrolling navigation and mobile menu toggle -->
+    <script>
+        (function() {
+            // TODO: Implement smooth scrolling for navigation links
+            // TODO: Implement mobile menu toggle functionality
+            // TODO: Implement form validation and submission
+            // TODO: Add contact form submission handling
+        })();
+    </script>
+</body>
+</html>
