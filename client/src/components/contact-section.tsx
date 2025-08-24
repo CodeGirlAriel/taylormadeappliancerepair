@@ -37,10 +37,16 @@ export default function ContactSection() {
     <section id="contact" className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4" data-testid="contact-title">
+          <h2
+            className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4"
+            data-testid="contact-title"
+          >
             Get Your Appliances Fixed Today
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-testid="contact-description">
+          <p
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            data-testid="contact-description"
+          >
             Book online, track your technician, or check job/parts status with our secure customer portal.
           </p>
         </div>
@@ -49,7 +55,10 @@ export default function ContactSection() {
           {/* Left: contact info */}
           <div className="space-y-8">
             <div className="bg-white rounded-xl p-8 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-6" data-testid="contact-info-title">
+              <h3
+                className="text-xl font-semibold text-gray-900 mb-6"
+                data-testid="contact-info-title"
+              >
                 Contact Information
               </h3>
 
@@ -57,7 +66,11 @@ export default function ContactSection() {
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
                   return (
-                    <div key={index} className="flex items-start" data-testid={`contact-info-${index}`}>
+                    <div
+                      key={index}
+                      className="flex items-start"
+                      data-testid={`contact-info-${index}`}
+                    >
                       <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                         <Icon className="text-white w-6 h-6" />
                       </div>
@@ -72,7 +85,9 @@ export default function ContactSection() {
                             {info.content}
                           </a>
                         ) : (
-                          <p className="text-gray-600 whitespace-pre-line">{info.content}</p>
+                          <p className="text-gray-600 whitespace-pre-line">
+                            {info.content}
+                          </p>
                         )}
                       </div>
                     </div>
@@ -92,6 +107,30 @@ export default function ContactSection() {
               or check the status of your job/parts. Each link opens in a new tab.
             </p>
 
+            {/* Peninsula scheduling sub-section */}
+		<div className="mb-6 text-red-700">
+ 		 <div className="flex items-center gap-2 text-sm font-semibold">
+    		<Clock className="w-4 h-4" />
+    		<span>Peninsula Scheduling Windows</span>
+  		</div>
+  		<p className="mt-2 font-medium">
+   		 We are proud to now offer online scheduling options for our Peninsula customers.
+  		</p>
+  		<ul className="mt-3 space-y-1 list-disc list-inside">
+    		<li>
+      		<span className="font-semibold">Morning:</span>{" "}
+      		<span className="font-semibold">9:00 AM – 2:00 PM</span>
+    		</li>
+    		<li>
+      		<span className="font-semibold">Afternoon:</span>{" "}
+      		<span className="font-semibold">2:00 PM – 6:00 PM</span>
+    		</li>
+  		</ul>
+		</div>
+
+
+
+            {/* Buttons */}
             <div className="grid sm:grid-cols-2 gap-4">
               <Button asChild className="w-full" data-testid="btn-schedule">
                 <a href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
